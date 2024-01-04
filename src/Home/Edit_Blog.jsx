@@ -57,7 +57,7 @@ function Blog() {
     }
   }
   return (
-    <div className='bg-gray-100 w-screen h-[1200px]'>
+    <div className='bg-gray-100 w-screen h-[1000px]'>
      <Header/> 
       <div>
         <div className='flex flex-row  justify-center items-center gap-4'>

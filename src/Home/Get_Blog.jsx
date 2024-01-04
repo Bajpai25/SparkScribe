@@ -56,7 +56,7 @@ async function delete_blog(id){
                      <h1> {item.tags} {item.time}</h1>
                      </div>
                    <p className='line-clamp-5 overflow-hidden'>{item.content}</p>
-                   <a>Read more</a>
+                   <Link to={`/preview/`+item._id} className='text-blue-500 text-xl'>Read more</Link>
                    <div className='flex flex-row gap-6'>
                    <Link to={`/blog_edit/` + item._id}>
                    <button><FaEdit className='h-8 w-8'/></button>

@@ -14,8 +14,7 @@ function Register() {
         first_name,last_name,email,password
       })
     })
-    if(response){
-      console.log(response.status)
+    if(response.status===200){
       alert('Registered Successfully');
     }
     else{

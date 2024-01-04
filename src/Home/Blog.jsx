@@ -36,7 +36,7 @@ function Blog() {
     }
   }
   return (
-    <div className='bg-gray-100 w-screen h-screen'>
+    <div className='bg-gray-100 w-screen h-[1000px]'>
      <Header/> 
       <div>
         <div className='flex flex-row   justify-center items-center gap-4'>
@@ -48,7 +48,7 @@ function Blog() {
             <FaUnderline/>
             <FaImage/>
         </div>
-        <div className='flex flex-row  justify-center gap-10 m-4 text-xl'>
+        <div className='md:flex md:flex-row flex flex-col  justify-center gap-10 m-4 text-xl'>
         <div>
         <select value={category} onChange={(e)=>{setCategory(e.target.value)}}>
             <option>Category</option>
@@ -67,14 +67,15 @@ function Blog() {
             <option>Others</option>
         </select>
         </div>
-        <div className='flex flex-row justify-evenly gap-3'>
+        <div >
             <select value={time} onChange={(e)=>{setTime(e.target.value)}}>
                 <option>Choose</option>
                 <option>Seconds</option>
                 <option>Minutes</option>
                 <option>Hours</option>
             </select>
-        <input value={tags} onChange={(e)=>{setTags(e.target.value)}} type="number" placeholder="Time to read" className='pl-2' ></input>
+        <input value={tags} onChange={(e)=>{setTags(e.target.value)}} type="number" placeholder="Time to read" 
+        className='pl-2 ml-3' ></input>
         </div>
         </div>
         <textarea value={content} onChange={(e)=>{setContent(e.target.value)}} className='w-3/4 h-[400px] m-auto item-center border-b-2 text-xl rounded-md p-2 flex items-center justify-center m-4' placeholder="Write your blog here..."></textarea>      

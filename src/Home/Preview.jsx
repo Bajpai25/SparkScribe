@@ -27,9 +27,9 @@ function Preview() {
         get_blog_data_by_id();
     },[]);
   return (
-    <div className='bg- h-[1200px] w-screen'>
+    <div className='h-[1000px]'>
         <Header/>
-        <div className=' bg-white flex  m-8 w-auto flex-col justify-center items-center h-auto shadow-xl 
+        <div className=' bg-white flex  m-auto mt-12  md:w-1/2 w-auto flex-col justify-center items-center h-auto shadow-xl 
         shadow-gray-400 rounded-md p-6 '>
       <h1 className='text-center text-3xl text-black  font-bold font-[sans]'>{title}</h1>
       <button className='text-lg bg-gray-200 w-36  text-center text-black rounded-md font-semibold font-sans mt-3 mb-3'>{category}</button>
