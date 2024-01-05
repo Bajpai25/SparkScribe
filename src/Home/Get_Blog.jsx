@@ -11,7 +11,7 @@ function Get_Blog() {
 
   async function get_blog_data() {
     try {
-      const response = await fetch('http://localhost:5000/get_blog')
+      const response = await fetch('https://backend-blog-ucbo.onrender.com/get_blog')
       const data = await response.json();
       setBlog_data(data.data);
     } 
@@ -30,7 +30,7 @@ function Get_Blog() {
 // delete data 
 
 async function delete_blog(id){
-  const response=await fetch('http://localhost:5000/blog/'+id,{
+  const response=await fetch('https://backend-blog-ucbo.onrender.com/blog/'+id,{
     method:"DELETE",
   }
   )

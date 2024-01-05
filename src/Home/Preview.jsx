@@ -12,7 +12,7 @@ function Preview() {
     const [content,setcontent]=useState('');
 
     async function get_blog_data_by_id(){
-        const response=await fetch('http://localhost:5000/blog/'+id,{
+        const response=await fetch('https://backend-blog-ucbo.onrender.com/blog/'+id,{
             method:"GET",
             headers:{'Content-Type':'application/json'}
         })

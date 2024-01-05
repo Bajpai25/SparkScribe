@@ -6,7 +6,7 @@ function Login() {
   const [login,setlogin]=useState(false);
   async function login_data() {
     try {
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch("https://backend-blog-ucbo.onrender.com/login", {
         method: 'POST',
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({

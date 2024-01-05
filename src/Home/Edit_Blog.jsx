@@ -15,7 +15,7 @@ function Blog() {
   const {id}=useParams();
 
   async function get_blog_by_id(){
-    const response=await fetch('http://localhost:5000/blog/'+id,{
+    const response=await fetch('https://backend-blog-ucbo.onrender.com/blog/'+id,{
         method:'GET',
         headers:{'Content-Type':'application/json'},
     })
@@ -33,7 +33,7 @@ function Blog() {
   },[]);
 
   async function Patch_blog(){
-    const response=await fetch('http://localhost:5000/blog/'+id,
+    const response=await fetch('https://backend-blog-ucbo.onrender.com/blog/'+id,
     {
       method:'PUT',
       headers:{'Content-Type':'application/json'},

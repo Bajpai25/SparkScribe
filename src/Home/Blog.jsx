@@ -5,15 +5,17 @@ import {LiaItalicSolid} from 'react-icons/lia'
 import {FaBold} from 'react-icons/fa'
 import {FaUnderline} from "react-icons/fa";
 import { FaImage } from "react-icons/fa6";
+import {Link} from 'react-router-dom'
 function Blog() {
   const [title,setTitle]=useState('')
   const [category,setCategory]=useState('');
   const [time,setTime]=useState('');
   const [content,setContent]=useState('');
   const [tags,setTags]=useState('');
+  const [post,setpost]=useState(false);
 
   async function Post_blog(){
-    const response=await fetch('http://localhost:5000/blog',
+    const response=await fetch('https://backend-blog-ucbo.onrender.com/blog',
     {
       method:'POST',
       headers:{'Content-Type':'application/json'},
@@ -30,6 +32,7 @@ function Blog() {
     console.log(data);
     if(response.status===200){
       alert('Blog Posted Successfully')
+      setpost(true);
     }
     else{
       alert('Blog not posted , Error occured');
@@ -82,6 +85,7 @@ function Blog() {
       </div>
       <div className='flex justify-center items-center m-4'>
       <button onClick={Post_blog} className='text-lg  w-32 text-white bg-blue-400 p-2 rounded-md'>Submit</button>
+      {post?(<Link to="/home"><button className='text-lg  w-32 text-white bg-blue-400 p-2 rounded-md ml-3'>Dashboard</button></Link>):(null)}
     </div>
     </div>
   )
