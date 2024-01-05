@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 import {FaClock} from "react-icons/fa";
 import Header from '../auth/Header';
 
@@ -10,6 +10,7 @@ function Preview() {
     const [time,settime]=useState('');
     const [tags,settags]=useState('');
     const [content,setcontent]=useState('');
+   
 
     async function get_blog_data_by_id(){
         const response=await fetch('https://backend-blog-ucbo.onrender.com/blog/'+id,{
@@ -38,6 +39,7 @@ function Preview() {
         <h1 className='text-xl font-sans font-semibold'>{tags} {time}</h1>
       </div>
       <p className='text-lg text-gray-600 font-light font-serif'>{content}</p>
+      <Link to="/home"><button className='text-lg  w-32 text-white bg-blue-400 p-2 rounded-md ml-3'>Dashboard</button></Link>
     </div>
     </div>
   )

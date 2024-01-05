@@ -5,7 +5,7 @@ import {LiaItalicSolid} from 'react-icons/lia'
 import {FaBold} from 'react-icons/fa'
 import {FaUnderline} from "react-icons/fa";
 import { FaImage } from "react-icons/fa6";
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 function Blog() {
   const [title,setTitle]=useState('')
   const [category,setCategory]=useState('');
@@ -13,6 +13,7 @@ function Blog() {
   const [content,setContent]=useState('');
   const [tags,setTags]=useState('');
   const {id}=useParams();
+  const [post,setpost]=useState(false);
 
   async function get_blog_by_id(){
     const response=await fetch('https://backend-blog-ucbo.onrender.com/blog/'+id,{
@@ -51,6 +52,7 @@ function Blog() {
 
     if(response.status===200){
       alert('Blog Updated Successfully')
+      setpost(true);
     }
     else{
       alert('Blog not updated , Error occured');
@@ -103,6 +105,7 @@ function Blog() {
       </div>
       <div className='flex justify-center items-center m-4'>
       <button onClick={Patch_blog} className='text-lg  w-32 text-white bg-blue-400 p-2 rounded-md'>Update</button>
+      {post?(<Link to="/home"><button className='text-lg  w-32 text-white bg-blue-400 p-2 rounded-md ml-3'>Dashboard</button></Link>):(null)}
     </div>
     </div>
   )
