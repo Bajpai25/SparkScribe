@@ -37,7 +37,7 @@ function Login() {
       <input required className='w-auto text-xl bg-gray-100 rounded-sm p-2'  type="password" value={password} onChange={(e)=>{setpassword(e.target.value)}} ></input>
       <button className='bg-green-500 text-white w-32 h-12 text-xl p-2 rounded-full text-center m-auto' onClick={login_data}>Login</button>
     {login ?(<Link to="/home"><button className='bg-green-500 text-white w-40 h-12 text-xl p-2 rounded-full text-center 
-    m-auto' >Dashboard</button></Link>):(null)};
+    m-auto' >Dashboard</button></Link>):(null)}
     </div>
   )
 }
