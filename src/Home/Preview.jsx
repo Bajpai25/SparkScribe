@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { useParams,Link } from 'react-router-dom';
 import {FaClock} from "react-icons/fa";
 import Header from '../auth/Header';
+;
 
 function Preview() {
     const {id}=useParams();

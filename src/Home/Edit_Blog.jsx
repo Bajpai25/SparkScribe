@@ -13,7 +13,7 @@ function Blog() {
   const [content,setContent]=useState('');
   const [tags,setTags]=useState('');
   const {id}=useParams();
-  const [post,setpost]=useState(false);
+    const [post,setpost]=useState(false);                                         
 
   async function get_blog_by_id(){
     const response=await fetch('https://backend-blog-ucbo.onrender.com/blog/'+id,{
@@ -43,7 +43,8 @@ function Blog() {
         category:category,
         time:time,
         content:content,
-        tags:tags
+        tags:tags,
+        
       })
     }
     )
@@ -58,6 +59,7 @@ function Blog() {
       alert('Blog not updated , Error occured');
     }
   }
+  
   return (
     <div className='bg-gray-100 w-screen h-[1000px]'>
      <Header/> 
@@ -99,6 +101,7 @@ function Blog() {
             </select>
         <input value={tags} onChange={(e)=>{setTags(e.target.value)}} type="number" placeholder="Time to read" 
         className='pl-2 w-[100px] ml-3' ></input>
+    
         </div>
         </div>
         <textarea value={content} onChange={(e)=>{setContent(e.target.value)}} className='w-3/4 h-[500px] m-auto item-center border-b-2 text-xl rounded-md p-2 flex items-center justify-center m-4' placeholder="Write your blog here..."></textarea>      

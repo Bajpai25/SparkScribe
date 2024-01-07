@@ -13,6 +13,7 @@ function Blog() {
   const [content,setContent]=useState('');
   const [tags,setTags]=useState('');
   const [post,setpost]=useState(false);
+  
 
   async function Post_blog(){
     const response=await fetch('https://backend-blog-ucbo.onrender.com/blog',
@@ -24,7 +25,7 @@ function Blog() {
         category:category,
         time:time,
         content:content,
-        tags:tags
+        tags:tags,
       })
     }
     )
@@ -78,7 +79,7 @@ function Blog() {
                 <option>Hours</option>
             </select>
         <input value={tags} onChange={(e)=>{setTags(e.target.value)}} type="number" placeholder="Time to read" 
-        className='pl-2 ml-3' ></input>
+        className='pl-2 ml-3' ></input>  
         </div>
         </div>
         <textarea value={content} onChange={(e)=>{setContent(e.target.value)}} className='w-3/4 h-[400px] m-auto item-center border-b-2 text-xl rounded-md p-2 flex items-center justify-center m-4' placeholder="Write your blog here..."></textarea>      
